@@ -1,0 +1,70 @@
+.header {
+  padding: 22px 0;
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.25);
+
+  @include media(768) {
+    padding: 11px 0;
+  }
+
+  &-row {
+    @include flex(center, space-between);
+  }
+
+  &-link {
+    color: $black-color;
+    font-size: 18px;
+    font-weight: 400;
+    opacity: 0.8;
+    @extend %trn;
+
+    &:not(:last-child) {
+      margin-right: 50px;
+    }
+
+    &__icon {
+      margin-left: 8px;
+    }
+
+    &:hover {
+      color: $red-color;
+
+      path {
+        fill: $red-color;
+      }
+    }
+
+    @include media(1000) {
+      font-size: 16px;
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  &-mobile {
+    display: none;
+
+    @include media(768) {
+      display: block;
+    }
+  }
+
+  &-buttons {
+    display: flex;
+    gap: 24px;
+
+    @include media(1000) {
+      gap: 12px;
+    }
+
+    @include media(768) {
+      display: none;
+    }
+  }
+
+  &-navbar {
+    @include media(768) {
+      display: none;
+    }
+  }
+}
